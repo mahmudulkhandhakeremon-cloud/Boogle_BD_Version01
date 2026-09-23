@@ -1,0 +1,259 @@
+/* CSS Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, lightblue); /* Matching soft pinkish background */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    width: 100%;
+}
+
+.nav-left {
+    flex: 1;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #5f6368;
+    font-size: 13px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.profile-btn {
+    background-color: transparent;
+    border: 1px solid #dadce0;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #3c4043;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-btn:hover {
+    background-color: rgba(60, 64, 67, 0.04);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0 20px 60px 20px;
+    margin-top: -40px;
+}
+
+/* Logo Styling */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}  
+.boogle-logo-img {
+    width: 230px;       /* লোগোর সাইজ ছোট করার জন্য এখানে উইডথ কমিয়ে দেওয়া হয়েছে (প্রয়োজনমতো বাড়াতে বা কমাতে পারেন) */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.custom-logo {
+    background: #111;
+    color: #fff;
+    padding: 22px 35px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333;
+}
+
+.logo-b {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #d4af37;
+}
+
+.logo-b sup {
+    font-size: 16px;
+}
+
+.logo-text {
+    font-size: 15px;
+    letter-spacing: 4px;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.logo-subtext {
+    font-size: 7.5px;
+    letter-spacing: 1.5px;
+    color: #aaa;
+    margin-top: 3px;
+}
+
+/* Search Bar Styling */
+.search-wrapper {
+    width: 100%;
+    max-width: 584px;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #dfe1e5;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+    border-radius: 24px;
+    padding: 0 16px;
+    height: 46px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-box:hover, .search-box:focus-within {
+    box-shadow: 0 1px 8px rgba(32, 33, 36, 0.15);
+    border-color: rgba(223, 225, 229, 0);
+}
+
+.search-icon {
+    color: #9aa0a6;
+    font-size: 16px;
+    margin-right: 14px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #202124;
+    background: transparent;
+}
+
+.mic-icon {
+    color: #4285f4;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Shortcuts Section */
+.shortcuts-container {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.shortcut-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 75px;
+}
+
+.shortcut-icon-circle {
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.shortcut-icon-circle i {
+    font-size: 20px;
+    color: #3c4043;
+}
+
+.shortcut-item:hover .shortcut-icon-circle {
+    background-color: #f1f3f4;
+    transform: translateY(-2px);
+}
+
+.add-circle i {
+    color: #5f6368;
+}
+
+.shortcut-label {
+    font-size: 12px;
+    color: #3c4043;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Action Footer */
+.action-footer {
+    font-size: 13px;
+    color: #5f6368;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.action-footer:hover {
+    color: #202124;
+    text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px;
+    }
+    
+    .search-wrapper {
+        padding: 0 10px;
+        max-width: 100%;
+    }
+
+    .custom-logo {
+        padding: 18px 25px;
+    }
+
+    .logo-b {
+        font-size: 24px;
+    }
+
+    .shortcuts-container {
+        gap: 20px;
+    }
+}

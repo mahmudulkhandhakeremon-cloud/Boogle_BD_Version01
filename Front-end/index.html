@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boogle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left"></div>
+        <div class="nav-right">
+            <a href="#" class="nav-link">Gmail</a>
+            <a href="#" class="nav-link">Images</a>
+            <button class="profile-btn" id="profileBtn">Boogle Profile</button>
+        </div>
+    </header>
+
+    <!-- Main Content Center Container -->
+    <main class="main-container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="./images/faah.jpg" alt="Boogle Logo" class="boogle-logo-img">
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search Boogle or type a URL" autocomplete="off">
+                <i class="fa-solid fa-microphone mic-icon"></i>
+            </div>
+        </div>
+
+        <!-- Shortcuts Section -->
+        <div class="shortcuts-container">
+            <div class="shortcut-item" id="githubShortcut">
+                <div class="shortcut-icon-circle">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <span class="shortcut-label">GitHub</span>
+            </div>
+
+            <div class="shortcut-item" id="addShortcut">
+                <div class="shortcut-icon-circle add-circle">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <span class="shortcut-label">Add shortcut</span>
+            </div>
+        </div>
+
+        <!-- Action Footer -->
+        <div class="action-footer" id="actionFooter">
+            Authorize application...
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
