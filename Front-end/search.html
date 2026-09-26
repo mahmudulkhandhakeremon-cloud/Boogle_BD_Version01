@@ -149,20 +149,9 @@
     </div>
 
     <script>
-        // আপনার search.html বা সংশ্লিষ্ট JS ফাইলের একদম ওপরের দিকে এটি বসাবেন
         const API_URL = "https://boogle-bd-version01.onrender.com";
 
-        // এরপর যেখানে ফেচ বা কল করা হচ্ছে, সেখানে এভাবে ব্যবহার করবেন:
-        fetch(`${API_URL}/search?q=${query}`)
-        .then(response => response.json())
-        .then(data => {
-        // ডেটা দেখানোর কোড...
-        })
-        .catch(error => {
-        console.error('Could not connect to FastAPI server!', error);
-         });
-         
-        // URL থেকে কুয়েরি রিড করা
+        // URL থেকে কুয়েরি রিড করা
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('q');
         const searchInput = document.getElementById('searchInput');
@@ -170,8 +159,8 @@
         if (query) {
             searchInput.value = query;
             
-            // FastAPI থেকে ডেটা ফেচ করা
-             fetch(`${API_URL}/search?q=${encodeURIComponent(query)}`)
+            // FastAPI থেকে সঠিক নিয়মে ডেটা ফেচ করা
+            fetch(`${API_URL}/search?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
                     const resultsContainer = document.getElementById('resultsContainer');
@@ -199,6 +188,8 @@
                     console.error('Error:', error);
                     document.getElementById('resultsContainer').innerHTML = `<p class="no-result">Could not connect to FastAPI server!</p>`;
                 });
+        } else {
+            document.getElementById('resultsContainer').innerHTML = `<p class="no-result">Please enter a search query.</p>`;
         }
 
         // সার্চ বারে নতুন কিছু লিখে এন্টার প্রেস করলে আবার সার্চ হবে
