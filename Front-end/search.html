@@ -13,7 +13,6 @@
             background-color: #fff;
             color: #202124;
         }
-        /* Top Search Header */
         .search-header {
             display: flex;
             align-items: center;
@@ -42,7 +41,6 @@
             display: flex;
             align-items: center;
             border: 1px solid #dfe1e5;
-            box-shadow: none;
             border-radius: 24px;
             width: 600px;
             max-width: 100%;
@@ -64,8 +62,6 @@
             margin-left: 10px;
             cursor: pointer;
         }
-
-        /* Navigation Bar (Only 'All') */
         .nav-tabs {
             display: flex;
             padding-left: 155px;
@@ -80,8 +76,6 @@
             border-bottom: 3px solid #1a0dab;
             cursor: pointer;
         }
-
-        /* Results Section */
         .results-body {
             padding: 20px 155px;
             max-width: 650px;
@@ -114,7 +108,6 @@
             color: #d93025;
             font-size: 16px;
         }
-
         @media(max-width: 768px) {
             .search-header { flex-direction: column; align-items: flex-start; gap: 15px; }
             .nav-tabs, .results-body { padding-left: 20px; padding-right: 20px; }
@@ -124,7 +117,6 @@
 </head>
 <body>
 
-    <!-- Header with Logo and Search Bar -->
     <div class="search-header">
         <a href="index.html" class="logo-text">
             <span>B</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
@@ -135,12 +127,10 @@
         </div>
     </div>
 
-    <!-- Filter Menu (Only 'All') -->
     <div class="nav-tabs">
         <div class="nav-tab-item">All</div>
     </div>
 
-    <!-- Main Results Area -->
     <div class="results-body">
         <div class="result-stats" id="resultStats">About results</div>
         <div id="resultsContainer">
@@ -151,7 +141,6 @@
     <script>
         const API_URL = "https://boogle-bd-version01.onrender.com";
 
-        // URL থেকে কুয়েরি রিড করা
         const urlParams = new URLSearchParams(window.location.search);
         const query = urlParams.get('q');
         const searchInput = document.getElementById('searchInput');
@@ -159,7 +148,6 @@
         if (query) {
             searchInput.value = query;
             
-            // FastAPI থেকে সঠিক নিয়মে ডেটা ফেচ করা
             fetch(`${API_URL}/search?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
@@ -192,7 +180,6 @@
             document.getElementById('resultsContainer').innerHTML = `<p class="no-result">Please enter a search query.</p>`;
         }
 
-        // সার্চ বারে নতুন কিছু লিখে এন্টার প্রেস করলে আবার সার্চ হবে
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 const newQuery = searchInput.value.trim();
